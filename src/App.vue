@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ heading }}</h1>
+    <math-facts/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MathFacts from './components/MathFacts.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MathFacts 
+  },
+  data: function () {
+    return {
+      heading: "Hello Vue!",
+    };
+  },
+  methods: {
   }
 }
 </script>
@@ -25,4 +32,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
