@@ -7,18 +7,24 @@
     </form>
     <p v-if="isErr">There was a problem!</p>
     <p v-else>{{this.currentFact}}</p>
+    <button v-bind:disabled="factInvalid" v-on:click="saveFact">Save Current Fact</button>
+    <ul>
+      <li v-for="fact of savedFacts" :key="fact.id">
+        {{ fact.text }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'MathFacts',
   data: function (){
     return {
       query: null,
       currentFact: '',
-      isErr: false
+      isErr: false,
+      savedFacts: []
     };
   },
   methods: {
@@ -29,6 +35,18 @@ export default {
         .then(body => {
           this.currentFact = body;
         });
+    },
+    saveFact: function () {
+      if (this.factInvalid) {
+        null;
+      } else {
+        this.savedFacts.push({ id: this.savedFacts.length, text: this.currentFact });
+      }
+    }
+  },
+  computed: {
+    factInvalid: function () {
+      return (this.currentFact === 'Number not found')
     }
   }
 }
@@ -44,8 +62,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
-  margin: 0 10px;
+  margin: 5 10px;
 }
 a {
   color: #42b983;
