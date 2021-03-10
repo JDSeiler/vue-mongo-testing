@@ -33,7 +33,7 @@ async function deleteFacts() {
         await client.connect();
     }
 
-    const facts = await client.db("hello_mongo").collection("facts");
+    const facts = await client.db(MAIN_TABLE).collection("facts");
     await facts.deleteMany({});
 }
 
