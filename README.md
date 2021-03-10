@@ -28,3 +28,11 @@ npm run build
 # Lints all files and attempts to autofix
 npm run lint
 ```
+
+## Resources Utilized
+In order to create this prototype, I drew from the following resources:
+- [Vue.js Guide](https://vuejs.org/v2/guide/)
+- [The Mongo Manual](https://docs.mongodb.com/manual/)
+- [MongoDB Node Driver Documentation](https://docs.mongodb.com/drivers/node/)
+- [NodeJS MongoDB Driver API Documentation](http://mongodb.github.io/node-mongodb-native/3.6/api/)
+- [Express v4 API Reference](http://expressjs.com/en/4x/api.html)
