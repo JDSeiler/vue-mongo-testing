@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>{{ heading }}</h1>
+    <!-- Adding a component to the DOM -->
     <math-facts/>
   </div>
 </template>
@@ -11,6 +12,7 @@ import MathFacts from './components/MathFacts.vue'
 export default {
   name: 'App',
   components: {
+    // Components must be registered
     MathFacts 
   },
   data: function () {
@@ -18,8 +20,6 @@ export default {
       heading: "Hello Vue!",
     };
   },
-  methods: {
-  }
 }
 </script>
 
@@ -32,5 +32,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
 </style>
